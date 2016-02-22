@@ -1,0 +1,94 @@
+html{
+    background-color: aquamarine;
+}
+
+#relics{
+    background-color: cadetblue;
+    width: 74%;
+    position: fixed;	
+	overflow: scroll;
+	height: 530px;
+    //left: 15%;
+    top: 23%;
+}
+
+#screens{
+    font-size: 20px;
+    font-weight: bold;  
+    font-family: Calibri;
+    position: fixed;
+    left: 18%;
+}
+
+#screens input{
+    width: 25px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#relicCards{
+	background-color: cadetblue;
+	width: 330px;
+	height:100%;
+	position: absolute;
+	top: 0%;
+	right: 0%;
+}
+
+div ul{
+    list-style-type: none;
+}
+
+div ul li{
+    width: 220px;
+    height: 65px;
+    background-color: lightcyan;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+    align-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px 3px 5px lightgray;
+}
+
+div ul :hover{
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+div ul li img{
+    float: left;
+    clear: both;
+    margin-right: 20px;
+	position: relative;
+}
+
+div ul li p{
+    display: inline;
+    font-weight: bold;
+    font-size: 18.5px;
+	font-family: Arial;
+}
+
+.button {
+	webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+.hidden {
+	visibility: hidden;
+}

@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">    
+    <title>Relics</title>
+</head>
+<body>
+<h1>Relics</h1>
+<form name="calculator">
+    <div id="screens">	
+        <label for="healing">HP</label>
+        <input type="text" name="healing" id="healing" readonly>
+        <label for="physicalDefence">PD</label>
+        <input type="text" name="physicalDefence" id="physicalDefence" readonly>
+        <label for="physicalAttack">PA</label>
+        <input type="text" name="physicalAttack" id="physicalAttack" readonly>
+        <label for="elementalDefence">ED</label>
+        <input type="text" name="elementalDefence" id="elementalDefence" readonly>
+        <label for="elementalAttack">EA</label>
+        <input type="text" name="elementalAttack" id="elementalAttack" readonly>
+        <label for="speed">SP</label>
+        <input type="text" name="speed" id="speed" readonly>
+		<button type="button" onclick="printStats()">Calculate</button>
+    </div>
+    <script src="script.js"></script>
+	
+	<div id="relicCards">
+	
+	</div>
+	
+    <div id="relics">
+    <ul>
+        <li>
+            <div class="button" onclick="changeStats('lakeAzorePearl', this, 'Health', 5)">
+                <img src="Relics/2%20Lake%20Azore%20Pearl.png"/>
+				<p>Lake Azore</p>
+				<br>
+				<p>Pearl</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('wishingWellCoin', this, 'PhysicalDefence', 2)">
+                <img src="Relics/3%20Wishing%20Well%20Coin.png"/>
+				<p>Wishing Well</p>
+				<br>
+				<p>Coin</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('fenholmRiverRock', this, 'ElementalAttack', 2)">
+                <img src="Relics/4%20Fenholm%20River%20Rock.png"/>
+				<p>Fenholm River</p>
+				<br>
+				<p>Rock</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('woodsmansAxeHead', this, 'PhysicalAttack', 3)">
+                <img src="Relics/5%20Woodsman's%20Axe%20Head.png"/>
+				<p>Woodsman</p>
+				<br>
+				<p>Axe Head</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('spinteretteSilk', this, 'Speed', 5)">
+                <img src="Relics/6%20Spinerette%20Silk.png">
+				<p>Spinterette</p>
+				<br>
+				<p>Silk</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('collectorsGem', this, 'ElementalDefence', 2)">
+                <img src="Relics/7%20Collector's%20Gem.png">
+				<p>Collectors</p>
+				<br>
+				<p>Gem</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('elefaunaFlower', this, 'ElementalDefence', 5)">
+                <img src="Relics/8%20Elefauna%20Flower.png"/>
+				<p>Elefauna</p>
+				<br>
+				<p>Flower</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('bottlefog', this, 'PhysicalAttack', 5)">
+                <img src="Relics/9%20Bottlefog.png"/>
+				<p>Bottlefog</p>
+				<br>
+				<p class="hidden">Relic</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('AzoreCattailRoot', this, 'Speed', 10)">
+                <img src="Relics/10%20Azore%20Cattail%20Root.png"/>
+				<p>Azore Cattail</p>
+				<br>
+				<p>Root</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('magiciteRing', this, 'ElementalAttack', 4)">
+                <img src="Relics/11%20Magicite%20Ring.png"/>
+				<p>Magicite</p>
+				<br>
+				<p>Ring</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('volcanicReef', this, 'PhysicalDefence', 5)">
+                <img src="Relics/12%20Volcanic%20Reef.png"/>
+				<p>Volcanic</p>
+				<br>
+				<p>Reef</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('prapple', this, 'Health', 10)">
+                <img src="Relics/13%20Prapple.png"/>
+				<p>Prapple</p>
+				<br>
+				<p class="hidden">Relic</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('magicFlowerSeed', this, 'Health', 15)">
+                <img src="Relics/14%20Magic%20Flower%20Seed.png"/>
+				<p>Magic Flower</p>
+				<br>
+				<p>Seed</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('elderTreeBark', this, 'ElementalDefence', 10)">
+                <img src="Relics/15%20Elder%20Tree%20Bark.png"/>
+				<p>Elder Tree</p>
+				<br>
+				<p>Bark</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('silverRuinShard', this, 'Speed', 15)">
+                <img src="Relics/16%20Silver%20Ruin%20Shard.png"/>
+				<p>Silver Ruin</p>
+				<br>
+				<p>Shard</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('magiciteRobe', this, 'ElementalAttack', 6)">
+                <img src="Relics/17%20Magicite%20Robe.png"/>
+				<p>Magicite</p>
+				<br>
+				<p>Robe</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('growliathMace', this, 'PhysicalAttack', 6)">
+                <img src="Relics/18%20Growliath%20MAce.png"/>
+				<p>Growliath Mace</p>
+				<br>
+				<p class="hidden">Mace</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('aztekoSkin', this, 'PhysicalDefence', 10)">
+                <img src="Relics/19%20Azteko%20Skin.png"/>
+				<p>Azteko Skin</p>
+				<br>
+				<p class="hidden">Skin</p>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('polFragment', this, 'Speed', 20)">
+                <img src="Relics/20%20PoL%20Fragment.png"/>
+				<p>PoL</p>
+				<br>
+				<p>Fragment</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('eternalFallsMushroom', this, 'Health', 10)">
+                <img src="Relics/21%20Eternal%20Falls%20Mushroom.png"/>
+				<p>Eternal Falls</p>
+				<br>
+				<p>Mushroom</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('magiciteAmulet', this, 'ElementalAttack', 10)">
+                <img src="Relics/22%20Magicite%20Amulet.png"/>
+				<p>Magicite</p>
+				<br>
+				<p>Amulet</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('skylinePeakGem', this, 'ElementalDefence', 15)">
+                <img src="Relics/23%20Skyline%20Peak%20Gem.png"/>
+				<p>Skyline Peak</p>
+				<br>
+				<p>Gem</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('comTreasure', this, 'PhysicalDefence', 15)">
+                <img src="Relics/24%20CoM%20Treasure.png"/>
+				<p>CoM</p>
+				<br>
+				<p>Treasure</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('eternalIce', this, 'PhysicalAttack', 10)">
+                <img src="Relics/25%20Eternal%20Ice.png"/>
+				<p>Eternal Ice</p>
+				<br>
+				<p class="hidden">Ice</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('apolloNoxParchment', this, 'ElementalAttack', 15)">
+                <img src="Relics/26%20Apollo%20Nox%20Parchment.png"/>
+				<p>Apollo Nox</p>
+				<br>
+				<p>Parchment</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('dragonShackle', this, 'PhysicalDefence', 22)">
+				<img src="Relics/27%20Dragon%20Shackle.png"/>
+				<p>Dragon</p>
+				<br>
+				<p>Shackle</p>
+			</div>
+		</li>
+		<li>
+			<div class="button">
+				<img src="Relics/28%20Scholars%20Scroll.png"/>
+				<p>Sholar's</p>
+				<br>
+				<p>Scroll</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('leggyEggs', this, 'ElementalDefence', 22)">
+				<img src="Relics/29%20Leggy%20Eggs.png"/>
+				<p>Leggy</p>
+				<br>
+				<p>Eggs</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('frozenRoot', this, 'ElementalDefence', -11, 'PhysicalDefence', -11)">
+                <img src="Relics/30%20Frozen%20Root.png"/>
+				<p>Frozen</p>
+				<br>
+				<p>Root</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('quartexCrystal', this, 'ElementalAttack', -11, 'PhysicalAttack', -11)">
+                <img src="Relics/31%20Quartex%20Crystal.png"/>
+				<p>Quartex</p>
+				<br>
+				<p>Crystal</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('stonyShield', this, 'PhysicalDefence', 25, 'Speed', -7)">
+                <img src="Relics/32%20Stony%20Shield.png"/>
+				<p>Stony</p>
+				<br>
+				<p>Shield</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('bloomannesClaw', this, 'PhysicalAttack', 15)">
+                <img src="Relics/33%20Bloomannes%20Claw.png"/>
+				<p>Bloomanne's</p>
+				<br>
+				<p>Claw</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('cloudCake', this, 'Health', 25)">
+                <img src="Relics/34%20Cloud%20Cake.png">
+				<p>Cloud</p>
+				<br>
+				<p>Cake</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('emeraldScales', this, 'ElementalAttack', 14, 
+			'ElementalDefence', 14, 'PhysicalAttack', -4, 'PhysicalDefence', -4)">
+                <img src="Relics/35%20Emerald%20Scales.png">
+				<p>Emerald</p>
+				<br>
+				<p>Scales</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('obsidianLava', this, 'PhysicalAttack', 14,
+			'PhysicalDefence', 14, 'ElementalAttack', -4, 'ElementalDefence', -4)">
+                <img src="Relics/36%20Obsidian%20Lava.png"/>
+				<p>Obsidian</p>
+				<br>
+				<p>Lava</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('cactusFlower', this, 'Health', 22, 
+			'ElementalDefence', 3, 'PhysicalDefence', 3, 'PhysicalAttack', -3, 'ElementalAttack', -3)">
+                <img src="Relics/37%20Cactus%20Flower.png"/>
+				<p>Cactus</p>
+				<br>
+				<p>Flower</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('moltenCoin', this, 'ElementalDefence', 17,
+			'PhysicalDefence', 17, 'ElementalAttack', 11, 'PhysicalAttack', 11)">
+                <img src="Relics/37%20Molten%20Coin.png"/>
+				<p>Molten</p>
+				<br>
+				<p>Coin</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('peepsieEggs', this, 'Health', 25, 
+			'ElementalAttack', 10, 'Speed', -10, 'PhysicalAttack', -5)">
+                <img src="Relics/38%20Peepsie%20Eggs.png"/>
+				<p>Peepsie</p>
+				<br>
+				<p>Eggs</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('darkOwlieFeather', this, 'ElementalAttack', 17,
+			'Speed', 10, 'ElementalDefence', -9, 'PhysicalDefence', -9)">
+                <img src="Relics/39%20Dark%20Owlie%20Feather.png"/>
+				<p>Dark Owlie</p>
+				<br>
+				<p>Feather</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('ashyFeather', this, 'Speed', 20, 'ElementalAttack', 15,
+			'Health', -10, 'ElementalDefence', -5)">
+                <img src="Relics/41%20Ashy%20Feather.png"/>
+				<p>Ashy</p>
+				<br>
+				<p>Feather</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('templeStone', this, 'ElementalAttack', 17, 
+			'Speed', 20, 'Health', -20)">
+                <img src="Relics/42%20Temple%20Stone.png"/>
+				<p>Temple</p>
+				<br>
+				<p>Stone</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('scentOfSkustunk', this, 'Speed', -20, 
+			'ElementalAttack', 15, 'PhysicalAttack', 15)">
+                <img src="Relics/43%20Scent%20Of%20Skustunk.png"/>
+				<p>Scent Of</p>
+				<br>
+				<p>Skustunk</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('monasteryIdol', this, 'Speed', 25)">
+                <img src="Relics/44%20Monastery%20Idol.png"/>
+				<p>Monastery</p>
+				<br>
+				<p>Idol</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('mossOfDrowsie', this, 'Health', 3, 
+			'ElementalDefence', 1, 'Speed', -2)">
+                <img src="Relics/45%20Moss%20Of%20Drowsie.png"/>
+				<p>Moss of</p>
+				<br>
+				<p>Drowsie</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('patchkinsRing', this, 'Speed', -15,
+			'ElementalAttack', 15, 'PhysicalAttack', 10)">
+                <img src="Relics/46%20Patchkin's%20Rind.png"/>
+				<p>Patchkin's</p>
+				<br>
+				<p>Ring</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('deepSeaCoral', this, 'Health', 15, 'Speed', 15)">
+                <img src="Relics/47%20Deep%20Sea%20Coral.png"/>
+				<p>Deep Sea</p>
+				<br>
+				<p>Coral</p>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('aerobianKeffiyeh', this, 'ElementalAttack', 13,
+			'Speed', 13, 'Health', -5)">
+                <img src="Relics/48%20Aerobian%20Keffiyeh.png"/>
+				<p>Aerobian</p>
+				<br>
+				<p>Keffiyeh</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('magiciteStaff', this, 'ElementalAttack', 10, 
+			'Speed', 15, 'ElementalDefence', 5, 'PhysicalDefence', -6)">
+                <img src="Relics/49%20Magicite%20Staff.png"/>
+				<p>Magicite</p>
+				<br>
+				<p>Staff</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('helzbelzBell', this, 'PhysicalAttack', 20, 
+			'ElementalAttack', -14, 'Speed', -5)">
+                <img src="Relics/50%20Helzbelz%20Bell.png"/>
+				<p>Helzbelz</p>
+				<br>
+				<p>Bell</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('arrowOfLove', this, 'Health', 20, 
+			'PhysicalAttack', 8)">
+                <img src="Relics/51%20Arrow%20of%20Love.png"/>
+				<p>Arrow</p>
+				<br>
+				<p>Of Love</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('darkWarroThorns', this, 'Speed', -10,
+			'ElementalAttack', -5, 'Health', 20, 'PhysicalAttack', 10)">
+                <img src="Relics/52%20Dark%20Warro%20T.png"/>
+				<p>Dark</p>
+				<br>
+				<p>Warro Thorn's</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('everlastingSnowball', this, 'ElementalDefence', 25,
+			'Speed', -7)">
+                <img src="Relics/53%20Everlasting%20Snowball.png"/>
+				<p>Everlasting</p>
+				<br>
+				<p>Snowball</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('spookyHorn', this, 'Speed', 20, 'ElementalAttack', 20,
+			'ElementalDefence', -10, 'PhysicalDefence', -10)">
+                <img src="Relics/54%20Spooky%20Horn.png"/>
+				<p>Spooky</p>
+				<br>
+				<p>Horn</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('vanquishedSoul ', this, 'PhysicalAttack', 8,
+			'Health', 20)">
+				<img src="Relics/55%20Vanquished%20Soul.png"/>
+				<p>Vanquished</p>
+				<br>
+				<p>Soul</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('dragonsFang', this, 'PhysicalAttack', 13,
+			'Speed', 9, 'Health', -9)">
+				<img src="Relics/56%20Dragon's%20Fang.png"/>
+				<p>Dragon's</p>
+				<br>
+				<p>Fang</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('cageOfDespair', this, 'ElementalDefence', 20,
+			'PhysicalDefence', 15, 'Speed', -20)">
+				<img src="Relics/57%20Cage%20of%20Despair.png"/>
+				<p>Cage of</p>
+				<br>
+				<p>Despair</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('lostSwords', this, 'PhysicalAttack', 20, 'Speed', 10,
+			'Health', -10)">
+                <img src="Relics/58%20Lost%20Swords.png"/>
+				<p>Lost</p>
+				<br>
+				<p>Swords</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('forest uardsRope', this, 'ElementalDefence', 25,
+			'ElementalAttack', 5, 'PhysicalAttack', -5, 'PhysicalDefence', -5)">
+                <img src="Relics/59%20Forest%20Guards%20Rope.png"/>
+				<p>Forest Guard's</p>
+				<br>
+				<p>Rope</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('noxsNightmare', this, 'ElementalAttack', 15,
+			'PhysicalAttack', 15, 'Health', 15, 'Speed', -10, 'ElementalDefence', -10, 'PhysicalDefence', -10)">
+                <img src="Relics/60%20Nox's%20Nightmare.png"/>
+				<p>Nox's</p>
+				<br>
+				<p>Nightmare</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('characholIdol', this, 'Speed', -5, 
+			'ElementalAttack', 20, 'ElementalDefence', 5, 'PhysicalDefence', 5, 'PhysicalAttack', -14)">
+                <img src="Relics/61%20Charachol%20Idol.png"/>
+				<p>Charachol</p>
+				<br>
+				<p>Idol </p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shipCaptainsLog', this, 'Health', -15,
+			'ElementalDefence', 18, 'PhysicalDefence', 18)">
+                <img src="Relics/62%20Ship%20Captains%20Log.png">
+				<p>Ship Captain's</p>
+				<br>
+				<p>Log</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('mysticMap', this, 'ElementalAttack', 20,
+			'Speed', 10, 'Health', -10)">
+                <img src="Relics/63%20Mystic%20Map.png">
+				<p>Mystic</p>
+				<br>
+				<p>Map</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('monksRobe', this, 'Health', 25, 
+			'ElementalAttack', 20, 'ElementalDefence', -5, 'PhysicalDefence', -5, 'PhysicalAttack', -10)">
+                <img src="Relics/64%20Monk's%20Robe.png"/>
+				<p>Monk's</p>
+				<br>
+				<p>Robe</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('airship%20Keys', this, 'ElementalDefence', -11,
+			'PhysicalDefence', -11)">
+                <img src="Relics/65%20Airship%20Keys.png"/>
+				<p>Airship</p>
+				<br>
+				<p>Keys</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('volcanoGuard', this, 'Health', 12,
+			'ElementalDefence', 12, 'PhysicalDefence', 12, 'PhysicalAttack', -5, 'PhysicalDefence', -5)">
+                <img src="Relics/66%20Volcano%20Guard.png"/>
+				<p>Volcano</p>
+				<br>
+				<p>Guard</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('monksMtGuard', this, 'Health', 25,
+			'PhysicalAttack', 20, 'ElementalDefence', -5, 'PhysicalDefence', -5, 'ElementalAttack', -10)">
+                <img src="Relics/67%20Monk's%20Mt.%20Guard.png"/>
+				<p>Monk's</p>
+				<br>
+				<p>Mt. Guard</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('mtGemmaGuard', this, 'Speed', 15,
+			'PhysicalDefence', 15, 'ElementalDefence', 10, 'Health', -10, 'PhysicalAttack', -10)">
+                <img src="Relics/68%20Mt.%20Gemma%20Guard.png"/>
+				<p>Mt. Gemma</p>
+				<br>
+				<p>Guard</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('jungleGuard', this, 'ElementalAttack', 7,
+			'Speed', 7, 'ElementalDefence', 7, 'PhysicalDefence', 7, 'PhysicalAttack', -15)">
+                <img src="Relics/69%20Jungle%20Guard.png"/>
+				<p>Jungle</p>
+				<br>
+				<p>Guard</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('sunfallShoresGuard', this, 'PhysicalAttack', 7,
+			'PhysicalDefence', 7, 'ElementalDefence', 7, 'Health', 7, 'Speed', 7, 'ElementalAttack', -15)">
+                <img src="Relics/70%20Sunfall%20Shores%20Guard.png"/>
+				<p>Sunfall</p>
+				<br>
+				<p>Shores Guard</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('forgingHammer', this, 'ElementalAttack', -11,
+			'PhysicalAttack', -11)">
+                <img src="Relics/71Forging%20Hammer.png"/>
+				<p>Forging</p>
+				<br>
+				<p>Hammer</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('frozenCoin', this, 'ElementalAttack', 17,
+			'PhysicalAttack', 17, 'ElementalDefence', 11, 'PhysicalDefence', 11)">
+                <img src="Relics/72%20Frozen%20Coin.png"/>
+				<p>Frozen</p>
+				<br>
+				<p>Coin</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('beanStalk', this, 'Speed', 25,
+			'ElementalDefence', 10, 'PhysicalDefence', 10, 'Health', -10)">
+                <img src="Relics/73%20Bean%20Stalk.png"/>
+				<p>Bean</p>
+				<br>
+				<p>Stalk</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('echinoShell', this, 'ElementalAttack', 18,
+			'PhysicalDefence', 18, 'PhysicalAttack', -5, 'ElementalDefence', -5)">
+                <img src="Relics/74%20Echino%20Shell.png"/>
+				<p>Echino</p>
+				<br>
+				<p>Shell</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('nerosOrb', this, 'PhysicalAttack', 20,
+			'Speed', 10, 'PhysicalDefence', 10, 'Health', -10, 'ElementalAttack', -5, 'ElementalDefence', -5)">
+                <img src="Relics/75%20Nero's%20Orb.png"/>
+				<p>Nero's</p>
+				<br>
+				<p>Orb</p>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('geotoadTeeth', this, 'PhysicalAttack', 20,
+			'Health', 10, 'ElementalAttack', -14, 'ElementalDefence', 5, 'PhysicalDefence', 5, 'Speed', -5)">
+                <img src="Relics/76%20Geotoad%20Teeth.png"/>
+				<p>Geotoad</p>
+				<br>
+				<p>Teeth</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('moonRock', this, 'Health', 30, 'ElementalDefence', 10,
+			'PhysicalDefence', 10, 'Speed', -15, 'ElementalAttack', -15, 'PhysicalAttack', -15)">
+                <img src="Relics/77%20Moon%20Rock.png"/>
+				<p>Moon</p>
+				<br>
+				<p>Rock</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('flintlysHorn', this, 'ElementalAttack', 10,
+			'Health', 10, 'PhysicalDefence', 17, 'PhysicalAttack', -15)">
+                <img src="Relics/78%20Flintly's%20Horn.png"/>
+				<p>Flintly's</p>
+				<br>
+				<p>Horn</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('nanaslugsHorn', this, 'ElementalAttack', 20,
+			'Health', 20, 'Speed', -10, 'ElementalDefence', -5, 'PhysicalDefence', -5)">
+                <img src="Relics/79%20Nanaslug's%20Horn.png"/>
+				<p>Nanaslug's</p>
+				<br>
+				<p>Horn</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('flyingCarpetFragment', this, 'ElementalAttack', 15,
+			'PhysicalDefence', 10, 'Health', 5, 'Speed', -25, 'PhysicalAttack', -15, 'ElementalDefence', 10)">
+                <img src="Relics/80%20Flying%20Carpet%20Fragment.png"/>
+				<p>Flying Carpet</p>
+				<br>
+				<p>Fragment</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('petrifiedMamaBaby', this, 'PhysicalAttack', 10,
+			'ElementalAttack', 10, 'Health', 20, 'Speed', -15)">
+                <img src="Relics/81Petrified%20Mama%20Baby.png"/>
+				<p>Petrified</p>
+				<br>
+				<p>Mama Baby</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('truncherousHammer', this, 'Health', 5,
+			'PhysicalAttack', 15, 'Speed', 5, 'ElementalAttack', -10)">
+                <img src="Relics/82%20Truncherous%20Ham.png"/>
+				<p>Truncherous</p>
+				<br>
+				<p>Hammer</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('shrunkenTikiHeads', this, 'PhysicalAttack', 30)">
+				<img src="Relics/83%20Shrunken%20Tiki%20Heads.png"/>
+				<p>Shrunken</p>
+				<br>
+				<p>Tiki Heads</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('flaringsHalo', this, 'ElementalDefence', 18, 
+			'PhysicalAttack', 18, 'ElementalAttack', -5, 'PhysicalDefence', -5)">
+				<img src="Relics/84%20Flaring's%20Halo.png"/>
+				<p>Flaring's</p>
+				<br>
+				<p>Halo</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('skelepupSpark', this, 'ElementalAttack', 30)">
+				<img src="Relics/85%20Skelepup%20Spark.png"/>
+				<p>Skelepup</p>
+				<br>
+				<p>Spark</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('saiyamsTriden', this, 'Health', 30)">
+                <img src="Relics/86%20Saiyam's%20Triden.png"/>
+				<p>Saiyam's</p>
+				<br>
+				<p>Triden</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('tikiIdol', this, 'Speed', 30)">
+                <img src="Relics/87%20Tiki%20Idol.png"/>
+				<p>Tiki Idol</p>
+				<br>
+				<p class="hidden">Tiki Idol</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('darkWindsVenom', this, 'ElementalDefence', 30)">
+                <img src="Relics/88%20Dark%20Wind's%20Venom.png"/>
+				<p>Dark Wind's</p>
+				<br>
+				<p>Venom</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('gravitronPebble', this, 'Speed', 15,
+			'Health', 15, 'PhysicalAttack', 20, 'ElementalAttack', -15)">
+                <img src="Relics/89%20Gravitron%20Pebble.png"/>
+				<p>Gravitron</p>
+				<br>
+				<p>Pebble</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('apolloNoxProphecyScroll', this, 'PhysicalDefence', 30)">
+                <img src="Relics/90%20Apollo%20Nox%20Prophecy%20Scroll.png">
+				<p>Apollo Nox</p>
+				<br>
+				<p>Prophecy Scroll</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('hotdogChewToy', this, 'ElementalAttack', -10, 
+			'ElementalDefence', 15, 'PhysicalAttack', -10, 'PhysicalDefence', 15, 'Health', 15, 'Speed', -15)">
+                <img src="Relics/91%20Hotdog%20Chew%20Toy.png">
+				<p>Hotdog</p>
+				<br>
+				<p>Chew Toy</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('petrifiedDragonEgg', this, 'Health', -12,
+			'Speed', 15, 'ElementalAttack', 15, 'PhysicalAttack', 15, 'ElementalDefence', -10, 'PhysicalDefence'
+			-10)">
+                <img src="Relics/92%20Petrified%20Dragon%20Egg.png"/>
+				<p>Petrified</p>
+				<br>
+				<p>Dragon Egg</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('aerobianComp', this, 'ElementalAttack', 10,
+			'PhysicalAttack', 10, 'Speed', 25, 'Health', -15)">
+                <img src="Relics/93%20Aerobian%20Comp.png"/>
+				<p>Aerobian</p>
+				<br>
+				<p>Comp</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('goldPieceDie', this, 'PhysicalDefence', 20, 
+			'PhysicalAttack', 5, 'ElementalDefence', -5, 'ElementalAttack', -5)">
+                <img src="Relics/94%20Gold%20Piece%20Die.png"/>
+				<p>Gold Piece</p>
+				<br>
+				<p>Die</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('smokeRing', this, 'Speed', 25,
+			'PhysicalAttack', 20)">
+                <img src="Relics/95%20Smoke%20Ring.png"/>
+				<p>Smoke</p>
+				<br>
+				<p>Ring</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('casanovasHarp', this, 'ElementalAttack', 20,
+			'Speed', 25)">
+                <img src="Relics/96%20Casanova's%20Harp.png"/>
+				<p>Casanova's</p>
+				<br>
+				<p>Harp</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('cactusThorn', this, 'ElementalAttack', 0)">
+                <img src="Relics/97%20Cactus%20Thorn.png"/>
+				<p>Cactus</p>
+				<br>
+				<p>Thorn</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('tikiShrinkingPotion', this, 'ElementalAttack', 20, 
+			'PhysicalAttack', -15, 'Health', 15, 'Speed', 15)">
+                <img src="Relics/98%20Tiki%20Shrinking%20Potion.png"/>
+				<p>Tiki Shrinking</p>
+				<br>
+				<p>Potion</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('essenceOfFoilOrb', this, 'Health', 25, 'Speed', 20)">
+                <img src="Relics/99%20Essence%20of%20Foil%20Orb.png"/>
+				<p>Essence of</p>
+				<br>
+				<p>Foil Orb</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('cactolinsThorn', this, 'Health', 30, 
+			'ElementalDefence', -5, 'Speed', -25, 'ElementalAttack', 10, 'PhysicalAttack', 10, 
+			'PhysicalDefence', -5)">
+                <img src="Relics/100%20Cactolin's%20Thorn.png"/>
+				<p>Cactolin's</p>
+				<br>
+				<p>Thorn</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('ryuuStatue', this, 'PhysicalDefence', 15, 
+			'ElementalDefence', 15)">
+                <img src="Relics/101%20Ryuee%20Statue.png"/>
+				<p>Ryuu</p>
+				<br>
+				<p>Statue</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('djinnEssence', this, 'ElementalAttack', 25,
+			'PhysicalAttack', 25, 'Health', 25)">
+                <img src="Relics/102%20Djinn%20Essence.png"/>
+				<p>Djinn</p>
+				<br>
+				<p>Essence</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('fracturedShell', this, 'ElementalDefence', 35)">
+                <img src="Relics/103%20Fractured%20Shell.png"/>
+				<p>Fractured</p>
+				<br>
+				<p>Shell</p>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('pamldasTalon', this, 'PhysicalAttack', 35)">
+                <img src="Relics/104%20Pamlda's%20Talon.png"/>
+				<p>Pamlda's</p>
+				<br>
+				<p>Talon</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('dawnstone', this, 'ElementalAttack', 35)">
+                <img src="Relics/105%20Dawnstone.png"/>
+				<p>Dawnstone</p>
+				<br>
+				<p class="hidden">Dawnstone</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shatteredGatestone', this, 'PhysicalDefence', 35)">
+                <img src="Relics/106%20Shattered%20Gatestone.png"/>
+				<p>Shattered</p>
+				<br>
+				<p>Gatestone</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('bubbleOfDawn', this, 'Speed', 35)">
+                <img src="Relics/107%20Bauble%20of%20Dawn.png"/>
+				<p>Bubble of</p>
+				<br>
+				<p>Dawn</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shardOfDawnsLanding', this, 'Health', 35)">
+                <img src="Relics/108%20Shard%20of%20Dawn's%20Landing.png"/>
+				<p>Shard of Dawns</p>
+				<br>
+				<p>Landing</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('flameOfFlue', this, 'ElementalAttack', 15,
+			'Speed', -5, 'Health', 15)">
+                <img src="Relics/109%20Flame%20of%20Flue.png"/>
+				<p>Flame of</p>
+				<br>
+				<p>Flue</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('spookyHorn', this, 'Speed', 20, 'ElementalAttack', 20,
+			'ElementalDefence', -10, 'PhysicalDefence', -10)">
+                <img src="Relics/54%20Spooky%20Horn.png"/>
+				<p>Spooky</p>
+				<br>
+				<p>Horn</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('shardOfRudolffe ', this, 'ElementalAttack', 15,
+			'PhysicalAttack', -5, 'Speed', -5, 'PhysicalDefence', 25)">
+				<img src="Relics/110%20Shard%20of%20Rudolffe.png"/>
+				<p>Shard of</p>
+				<br>
+				<p>Rudolffe</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('papasAntlers', this, 'ElementalAttack', 20,
+			'PhysicalAttack', 15, 'Health', 20)">
+				<img src="Relics/111%20Papas%20Antlers.png"/>
+				<p>Papa's</p>
+				<br>
+				<p>Antlers</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('shacklersGem', this, 'PhysicalAttack', 0)">
+                <img src="Relics/112%20Shackler's%20Gem.png"/>
+				<p>Shackler's</p>
+				<br>
+				<p>Gem</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('embersOfWinqull', this, 'ElementalAttack', 0)">
+                <img src="Relics/113%20Embers%20of%20Wiqull.png"/>
+				<p>Embers of</p>
+				<br>
+				<p>Winqull</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('gogsCog', this, 'ElementalAttack', -15,
+			'PhysicalAttack', 15, 'PhysicalDefence', 10, 'ElementalDefence', 10, 'Health', 5, 'Speed', -25)">
+                <img src="Relics/114%20Gog's%20Cog.png"/>
+				<p>Gog's Cog</p>
+				<br>
+				<p class="hidden">Cog</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('globOfEclipso', this, 'Health', 15,
+			'Speed', -5, 'PhysicalAttack', 15)">
+                <img src="Relics/115%20Glob%20of%20Eclipso.png"/>
+				<p>Glob of</p>
+				<br>
+				<p>Eclipso</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('lyeogryphsEye', this, 'Speed', -15,
+			'ElementalAttack', 20, 'Health', 5)">
+                <img src="Relics/116%20Lyeogryph's%20Eye.png"/>
+				<p>Lyeogryph's</p>
+				<br>
+				<p>Eye</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('doruxsCandle', this, 'Speed', 20,
+			'ElementalAttack', 15, 'Health', 5, 'PhysicalAttack', -30, 'ElementalDefence', 15)">
+                <img src="Relics/117%20Dorux's%20Candle.png"/>
+				<p>Dorux's</p>
+				<br>
+				<p>Candle</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('handOfGraw', this, 'Health', -10)">
+                <img src="Relics/118%20Hand%20of%20Graw.png"/>
+				<p>Hand of</p>
+				<br>
+				<p>Graw</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('goldenTeeth ', this, 'Speed', 35,
+			'ElementalAttack', 15, 'PhysicalAttack', -30)">
+				<img src="Relics/119%20Golden%20Teeth.png"/>
+				<p>Golden</p>
+				<br>
+				<p>Teeth</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('pyrantsFlame', this, 'Health', -25)">
+                <img src="Relics/120%20Pyrant's%20Flame.png"/>
+				<p>Pyrant's</p>
+				<br>
+				<p>Flame</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('blightedEye', this, 'ElementalAttack', 0)">
+				<img src="Relics/121%20Blighted%20Eye.png"/>
+				<p>Blighted</p>
+				<br>
+				<p>Eye</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('mollysOrb', this, 'Speed', -20,
+			'Health', 40)">
+				<img src="Relics/122%20Molly's%20Orb.png"/>
+				<p>Molly's Orb</p>
+				<br>
+				<p class="hidden">Orb</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('helyonsTail', this, 'ElementalAttack', 20,
+			'PhysicalAttack', 20, 'Health', 10)">
+                <img src="Relics/123%20Helyon's%20Tail.png"/>
+				<p>Helyon's</p>
+				<br>
+				<p>Tail</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('rareCoin', this, 'PhysicalDefence', 17,
+			'ElementalAttack', 17, 'PhysicalAttack', 17, 'ElementalDefence', 17)">
+                <img src="Relics/124%20Rare%20Coin.png"/>
+				<p>Rare Coin</p>
+				<br>
+				<p class="hidden">Rare Coin</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('goldysSpike', this, 'ElementalAttack', -30,
+			'PhysicalAttack', 15, 'PhysicalDefence', 15, 'Health', 20, 'Speed', 5)">
+                <img src="Relics/125%20Goldy's%20Spike.png"/>
+				<p>Goldy's</p>
+				<br>
+				<p>Spike</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('painfulElementalShield', this, 'Health', -6,
+			'ElementalAttack', 5)">
+                <img src="Relics/131%20Painful%20Elemental%20Shield.png"/>
+				<p>Painful</p>
+				<br>
+				<p>Elemental Shield</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('passiveShield', this, 'PhysicalDefence', 4,
+			'ElementalDefence', 4)">
+                <img src="Relics/132%20Passive%20Shield.png"/>
+				<p>Passive</p>
+				<br>
+				<p>Shield</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('magiciansShield', this, 'ElementalAttack', 11)">
+                <img src="Relics/133%20Magician's%20Shield.png"/>
+				<p>Magician's</p>
+				<br>
+				<p>Shield</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('vitalShield', this, 'Health', 32)">
+                <img src="Relics/134%20Vital%20Shield.png"/>
+				<p>Vital Shield </p>
+				<br>
+				<p class="hidden">Vital Shield </p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('healingProtectorsShield ', this, 'Health', 10,
+			'PhysicalDefence', 7, 'ElementalDefence', 8)">
+				<img src="Relics/135%20Healing%20Protector's%20Shield.png"/>
+				<p>Healing</p>
+				<br>
+				<p>Protectors Shield</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('snipingShield', this, 'Speed', 20,
+			'ElementalAttack', 8, 'PhysicalAttack', 7)">
+                <img src="Relics/136%20Sniping%20Shield.png"/>
+				<p>Sniping Shield</p>
+				<br>
+				<p class="hidden">Shield</p>
+            </div>
+        </li>
+		<li>
+			<div class="button" onclick="changeStats('elementsShieldOfLegends', this, 'ElementalAttack', 29)">
+				<img src="Relics/137%20Element's%20Shield%20of%20Legends.png"/>
+				<p>Element's Shield</p>
+				<br>
+				<p>of Legends</p>
+			</div>
+		</li>
+		<li>
+			<div class="button" onclick="changeStats('paladinsShield', this, 'PhysicalAttack', 34)">
+				<img src="Relics/138%20Paladin's%20Shield.png"/>
+				<p>Paladin's Shield</p>
+				<br>
+				<p class="hidden">Orb</p>
+			</div>
+		</li>
+		<li>
+            <div class="button" onclick="changeStats('shieldOfWatchfulness', this, 'Speed', 11)">
+                <img src="Relics/139%20Shield%20of%20Watchfulness.png"/>
+				<p>Shield of</p>
+				<br>
+				<p>Watchfulness</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('rapidRecoveringShield', this, 'Health', 43,
+			'Speed', 43)">
+                <img src="Relics/140%20Rapid%20Recovering%20Shield.png"/>
+				<p>Rapid Reco-</p>
+				<br>
+				<p>vering Shield</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shieldOfDirectness', this,'PhysicalAttack', 24,
+			'PhysicalDefence', 24)">
+                <img src="Relics/141%20Shield%20of%20Directness.png"/>
+				<p>Shield of</p>
+				<br>
+				<p>Directness</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shieldOfElementalRage', this, 'ElementalAttack', 33,
+			'Speed', 40)">
+                <img src="Relics/142%20Shield%20of%20Elemental%20Rage.png"/>
+				<p>Shield of</p>
+				<br>
+				<p>Elemental Rage</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shieldOfPassiveAggression', this, 'Health', 52,
+			'PhysicalAttack', -15, 'ElementalAttack', -15, 'PhysicalDefence', 30, 'ElementalDefence', 30)">
+                <img src="Relics/143%20Shield%20of%20Passive%20Aggression.png"/>
+				<p>Shield of Passive</p>
+				<br>
+				<p>Aggression</p>
+            </div>
+        </li>
+        <li>
+            <div class="button" onclick="changeStats('shieldOfDarkImmunity', this, 'Health', -18,
+			'PhysicalAttack', 10, 'ElementalAttack', 10)">
+                <img src="Relics/144%20Shield%20of%20Dark%20Immunity.png"/>
+				<p>Shield of</p>
+				<br>
+				<p>Dark Immunity</p>
+            </div>
+        </li>
+		<li>
+            <div class="button" onclick="changeStats('shieldOfAllPowers', this, 'Health', 22,
+			'ElementalAttack', 11, 'ElementalDefence', 11, 'PhysicalAttack', 11, 'PhysicalDefence', 11,
+			'Speed', 22)">
+                <img src="Relics/145%20Shield%20of%20All%20Power.png"/>
+				<p>Shield of</p>
+				<br>
+				<p>All Powers</p>
+            </div>
+        </li>
+	</ul>
+</div>
+</form>
+</body>
+</html>
